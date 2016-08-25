@@ -1,0 +1,61 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "ravens-review";
+	
+	- var title = "Ravens Road to Playoffs";
+	- var company = "The Baltimore Sun";
+	- var date = "January 2015";
+	- var summary = "With a win in the regular-season finale and some help from other teams, the Ravens clawed themselves into the playoffs in 2014. To recap their tumultuous road to the Wild Card and offer readers access to recaps, photo galleries and video interviews from each game, we organized Baltimore's season in this single-page project. After their loss to the eventual Super Bowl champions New England in the Divisonal Round, the project was rebranded as a season review.";
+	- var link = "http://data.baltimoresun.com/ravens/road-to-playoffs/";
+	
+	- var about = "There was a wealth of information to display. By the end, 17 games worth of scores, summaries, key plays, quotes, stats, and links to additional coverage were all included in the project. To keep this single-page layout manageable, I implemented a fixed navigation to &quot;smooth&quot; scroll between games and lazy-loaded the photos. My favorite design element is the understated line that links all the game modules, a nod to the &quot;road&quot; idea conveyed in the project's original name, and which indicates home or away games based on which side of the screen it travels.";
+	- var role = "I was the sole designer and developer on this project. I worked with reporters in the sports department to determine what information they could supply for each game in the season, then worked that into a minimalist, vertical timeline design with muted colors and action photos that popped. Using Jade minimized the markup to keep the document organized. ";
+
+	- var background = "#383f42";
+	- var backgroundrgba = "rgba(56,63,66,0.6)";
+
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div= numbers
+
+// block awards
+// 	.project-info-block(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div= awards
+
+
+
+
+
+
+

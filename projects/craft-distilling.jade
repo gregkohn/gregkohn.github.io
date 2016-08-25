@@ -1,0 +1,63 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "craft-distilling";
+	
+	- var title = "Craft Distilling";
+	- var company = "The Baltimore Sun";
+	- var date = "May 2015";
+	- var summary = "The striking rise of craft beers has been well documented, but what about liquor? Riding the coattails of its alcoholic brother, craft distilling is re-emerging in Maryland.";
+	- var link = "http://www.baltimoresun.com/entertainment/music/midnight-sun-blog/bal-craft-distilling-presentation-htmlstory.html";
+	
+	- var about = "We wanted to do this fun piece justice. To achieve this, we created custom art, <a href='http://codepen.io/gregkohn/pen/OPeOEO' target='_blank'>illustrated and animated the whiskey process</a>, threw in some numbers graphics and tied it together with some cohesive design elements.";
+	- var role = "I was the sole developer on this project and co-designer with two other teammates. Although I did not draw the art (except the corn!), I brought it to life with CSS3 animations in a slider I built to explain the whiskey process. The fun content made building the pull quotes, header and even the charts an extra enjoyable experience.";
+
+	- var accent = "#d99090";
+	- var background = "#6a1f1f";
+	- var backgroundrgba = "rgba(106,31,31,0.6)";	
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

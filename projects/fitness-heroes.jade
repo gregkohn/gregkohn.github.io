@@ -1,0 +1,65 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "fitness-heroes";
+	
+	- var title = "Fitness Heroes 2015";
+	- var company = "The Baltimore Sun";
+	- var date = "July 2015";
+	- var summary = "Who gets you in the best shape, Baltimore? That was the question posed to readers, and these 12 fitness motivators were the answer.";
+	- var link = "http://data.baltimoresun.com/b/fitness-heroes-2015/";
+	
+	- var about = "We decided to build a 13-page minisite to house all the interviews profiling each &quot;hero.&quot; This allowed us to make more media-enriched (looping, GIF-like HTML5 video, for example) and more easily shared pages.";
+	- var role = "I was the sole developer on this project and co-designer with one other teammate. It was also my first experience using Jade as more than a shorthand for HTML. Leveraging its templating capabilities, I created a tiered system of templates and abstracted all the content for the 12 profile pages into variables for easy production.";
+	- var numbers = "";
+	- var awards = "";
+
+	- var accent = "#1EC5CB";
+	- var background = "#0b2523";
+	- var backgroundrgba = "rgba(11,37,35,0.6)";
+	
+
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

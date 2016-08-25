@@ -1,0 +1,117 @@
+/*  GENERAL STYLES
+ *  ----------------- 
+ *  + Tophat
+ *    - Small logo, including glowing styles
+ *    - "Hamburger" styles and animation
+ */
+
+
+
+// These determine size of hamburger and help vertically align everything //
+
+$tophat-height: 50px
+$hamline-width: 25px
+$hamline-height: 3px
+$hamline-margin: 5px
+
+// --------------------------- //
+
+
+#tophat
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	+size(100% $tophat-height)
+	// background-color: rgba(34,34,34,0.6)
+	transition: transform 0.7s ease, background-color 0.4s
+	&.is-hidden
+		transform: translateY(-100%)
+		@media (max-width: $mobile)
+			transform: none
+	&.is-transparent
+		background-color: $darkestgray !important
+
+
+
+#small-logo
+	font:
+		family: $montserrat
+		weight: 700
+		size: 16px
+	// letter-spacing: 1em
+	cursor: pointer
+	color: #888
+	line-height: $tophat-height
+	margin-left: 10px
+	display: inline-block
+	&.glow
+		span:nth-child(1)
+			animation: accent-glow 10s 0s infinite
+		span:nth-child(2)
+			animation: accent-glow 10s 0.2s infinite
+		span:nth-child(3)
+			animation: accent-glow 10s 0.4s infinite
+	span
+		display: inline-block
+		vertical-align: middle
+		line-height: 1
+	img
+		width: 40px
+		opacity: 0.2
+		transition: opacity 1s
+	&:hover
+		img
+			opacity: 0.7
+
+
+
+
+/* Hamburger */
+
+#hamburger
+	position: absolute
+	top: (($tophat-height - ($hamline-height*3 + $hamline-margin*2))/2)
+	right: 10px
+	width: $hamline-width
+	height: ($hamline-height*3 + $hamline-margin*2)
+	cursor: pointer
+	&:hover	
+		.line
+			background-color: $home-accent
+	&.is-active
+		#line-middle
+			transform: rotate(45deg)
+		#line-middle-2
+			transform: rotate(-45deg)
+		#line-top
+			transform: translateY(-5px)
+		#line-bottom
+			transform: translateY(5px)
+		.hide
+			opacity: 0
+			visibility: hidden
+		
+.line
+	+size($hamline-width $hamline-height)
+	background-color: #888
+	position: absolute
+	right: 0
+	opacity: 1
+	visibility: visible
+	transition: all 0.4s
+
+#line-top
+	top: 0
+
+#line-middle
+	top: ($hamline-height + $hamline-margin)
+	
+#line-middle-2
+	top: ($hamline-height + $hamline-margin)
+
+#line-bottom
+	top: 2*($hamline-height + $hamline-margin)
+
+
+

@@ -1,0 +1,26 @@
+/*  PROJECT STYLES
+ *  ----------------- 
+ *  + Tophat modifications
+ *    - Align logo and nav colors with the individual project's
+ */
+
+
+// About the color variables
+//
+// In reality, color variables are overidden in project.jade
+// (for individual customization purposes) but using them
+// illustrates which properties are changed.
+
+
+
+#small-logo
+	color: $accent
+
+.line
+	background-color: $accent
+
+#hamburger:hover	
+	.line
+		background-color: white
+		@media (max-width: 1024px)
+			background-color: $accent

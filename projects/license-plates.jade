@@ -1,0 +1,55 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "license-plates";
+	
+	- var title = "Banned License Plates";
+	- var company = "The Baltimore Sun";
+	- var date = "August 2015";
+	- var summary = "&quot;KILLER.&quot; &quot;POLIC3.&quot; &quot;FLAKE.&quot; The morbid, idiotic and simply surprising all make the list of vanity plates deemed objectionable in the eyes of the Maryland Vehicle Administration. This fun interactive lets readers explore some of the editors' picks from over 4,000 no-nos.";
+	- var link = "http://data.baltimoresun.com/banned-license-plates/";
+	
+	- var about = "The idea is simple. The MVA released a long, unwieldy list of every vanity plate it has banned thus far, so how can we make that manageable and fun? Instead of doing a comprehensive but exceedingly repetitive data dump, our editor dwindled the list down to 65 or so representative (and not overly repugnant) plates. After someone proposed we emulate the look of a real license plate, I built <a href='http://codepen.io/gregkohn/pen/QbYVJY' target='_blank'> a cool little animation</a> to switch between them.";
+	- var role = "I was the sole developer on this project, working with one other teammate who did the design.";
+	- var numbers = "The project has over 450,000 clicks.";
+
+	- var accent = "goldenrod";
+	- var background = "#720101";
+	- var backgroundrgba = "rgba(114,1,1,0.6)";	
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+
+
+
+
+

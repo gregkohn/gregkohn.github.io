@@ -1,0 +1,67 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "undue-force";
+	
+	- var title = "Undue Force";
+	- var company = "The Baltimore Sun";
+	- var date = "September 2014";
+	- var summary = "Half a year before Freddie Gray's tragic death, Sun investigative reporter Mark Puente spent months digging into payouts Baltimore City had made to settle lawsuits over claims of police brutality. His award-winning story, which not only brought to light the startling statistics but put faces - bruised and battered - on the numbers, was given a custom presentation with several interactive graphics.";
+	- var link = "http://data.baltimoresun.com/news/police-settlements/";
+	
+	- var about = "A story this provocative and intense naturally required the most comprehensive and complicated story presentation I had ever worked on. In addition to building out the typical story media - video, photos, pull quotes - I created an inline document-viewer, an interactive that plotted the largest settlements by time or amount, and another that equated the money spent by the city to other, more useful expenditures. The largest interactive was an inline database containing details of the 43 cases resulting in payouts $30,000 and larger. ";
+	- var role = "I was the sole developer on this project. I worked on the general page design with one other teammate, and designed all the interactive graphics myself. The concepts for many of these were devised while brainstorming with our team and the investigative reporting team.";
+	- var numbers = "During its initial run at the end of 2014, the project received just shy of 40,000 views. Freddie Gray's tragic passing in April 2015, however, attracted attention to Baltimore's policing issues and, in turn, this project. It has now been viewed over 320,000 times.";
+	- var awards = "<ul><li><div class='project-info__block--awards__award'><strong> Finalist, </strong> 2015 Online Journalism Awards (ONA)</div><div class='project-info__block--awards__cat'>The Al Neuharth Innovation in Investigative Journalism Award</div> </li><li><div class='project-info__block--awards__award'><strong> Award of Excellence, </strong> 2014 Society of News Design's The Best of Digital Design</div></li><li><div class='project-info__block--awards__award'><strong> Second Place, </strong> 2014 MDDC Awards </div><div class='project-info__block--awards__cat'>Multimedia Storytelling (News) / Division A </div></li></ul>";
+
+	- var accent = "#6598c2";
+	- var background = "#12222f";
+	- var backgroundrgba = "rgba(18,34,47,0.6)";
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+			
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+block awards
+	.project-info__block.project-info__block--awards(data-sr)
+		.project-info__icon
+			span.icon-trophy
+		.project-info__block__content
+			header AWARDS
+			div !{awards}
+
+
+
+
+
+
+

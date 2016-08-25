@@ -1,0 +1,62 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "tracking-omalley";
+	
+	- var title = "Tracking Martin O'Malley";
+	- var company = "The Baltimore Sun";
+	- var date = "May 2015";
+	- var summary = "As the former governor of Maryland, Martin O'Malley and his political ambitions have long been covered by The Sun. His widely anticipated bid for the presidential nomination at the end of May 2015 meant a ramp-up in this coverage, and, as a part of this focus, we released a continually updated map and log of O'Malley's business travels since 2013.";
+	- var link = "http://data.baltimoresun.com/tracking-omalley/";
+	
+	- var about = "This project revolved solely around organizing information about when, where and - if available - why O'Malley was traveling outside of Maryland. We included a Raphael.js-powered SVG map to display his frequency in visiting different states, which doubles as a portal to filtering the full list of these visits. Alternatively, the list can be organized either chronologically or alphabetically by state.";
+	- var role = "I was the sole designer and developer on this project. Beyond the time spent designing mock-ups and building the front-end, I dedicated a lot of time to creating a fully automated backend that could handle input from a reporter. This was necessitated by the unusual need to develop this as a long-running and easily updated application. Much of this effort involved connecting the project to a Google Fusion Table via AJAX.";
+
+	- var accent = "#4ecbc2";
+	- var background = "#0b2523";
+	- var backgroundrgba = "rgba(11,37,35,0.6)";
+
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div= numbers
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div= awards
+
+
+
+
+
+
+

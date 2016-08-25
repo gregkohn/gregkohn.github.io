@@ -1,0 +1,64 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "homicides-map";
+	
+	- var title = "Baltimore Homicides Map";
+	- var company = "The Baltimore Sun";
+	- var date = "July 2015";
+	- var summary = "With its size rising at an alarming rate, our database of Baltimore homicides is an important resource for the community. It is a longstanding feature covering homicide data back to 2011, though it recently underwent a dramatic design &quot;facelift.&quot;";
+	- var link = "http://data.baltimoresun.com/bing-maps/homicides/";
+	
+	- var about = "Our homicides map and database has been around for years, and was consequently sporting an outdated look and lacking any responsiveness. With the backend architecture powering the application in fine working order, the goal was to make minimal changes to the HTML and do the bulk of a design refresh through CSS. Ultimately, a custom CSS-based slider with JavaScript hooks was built as well.";
+	- var role = "I was the sole designer and developer of the app's design refresh. I went with a dark, modular design that lent itself to being responsive and built a tab-navigated slider using CSS3 transforms and transitions.";
+	- var numbers = "In the month after the redesign, there were 204,000+ views, compared to 131,000+ the month prior (+56%). In its lifetime the project has more than 2.5 million views.";
+
+	- var accent = "#ca4a4b";
+	- var background = "#151515";
+	- var backgroundrgba = "rgba(21,21,21,0.6)";	
+	
+
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

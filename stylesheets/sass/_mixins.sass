@@ -1,0 +1,20 @@
+
+=omega-reset($nth)
+	&:nth-child(#{$nth})
+		margin-right: flex-gutter()
+	&:nth-child(#{$nth}+1)
+		clear: none
+
+
+=circle-w-centering($size, $border)
+	width: $size
+	height: $size
+	border-radius: ($size + $border)/2
+	line-height: ($size - ($border * 2))
+	text-align: center
+
+=links($color, $textdecoration)
+	a:link, a:visited, a:hover, a:active
+		color: $color
+		text-decoration: $textdecoration
+

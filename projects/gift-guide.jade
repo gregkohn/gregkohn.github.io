@@ -1,0 +1,67 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "gift-guide";
+	
+	- var title = "Gift Guide 2014";
+	- var company = "The Baltimore Sun";
+	- var date = "November 2014";
+	- var summary = "Once the mercury begins to drop, everyone starts the holiday season's most ancient of traditions: buying gifts. The Sun helped consumers navigate these troubling waters with a guide composed of more than 170 ideas, including dozens of unique gifts made locally in Baltimore.";
+	- var link = "http://data.baltimoresun.com/gift-guide-2014/";
+	
+	- var about = "While The Sun has included its traditional print gift guide online before, we wanted to expand the 2014 edition with functionality that truly enhanced the user's experience. We focused on filtering - both by one of more than a dozen categories and by price range - and a visual interface for an enjoyable browsing experience.";
+	- var role = "I was the sole developer on this project, working with one other teammate who did majority of the design. I used David DeSandro's powerful and elegant <a href='http://isotope.metafizzy.co/' target='_blank'> isotope.js </a> to handle the filtering and masonry layout of items loaded via JSON. The subtle hover and lightbox animations were all implemented using CSS3 transitions.";
+	- var awards = "<div class='project-info__block--awards__award'><strong> First Place, </strong> 2014 MDDC Awards</div><div class='project-info__block--awards__cat'>Multimedia Storytelling (Features) / Division A</div>";
+
+	- var accent = "#d3a916";
+	- var background = "#561011";
+	// - var background = "#2b0808";
+	- var backgroundrgba = "rgba(86,16,17,0.6)";
+	// - var backgroundrgba = "rgba(43,8,8,0.6)";
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div !{numbers}
+
+block awards
+	.project-info__block.project-info__block--awards(data-sr)
+		.project-info__icon
+			span.icon-trophy
+		.project-info__block__content
+			header AWARDS
+			div !{awards}
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "lifeline";
+	
+	- var title = "Lives on the Line";
+	- var company = "The Baltimore Sun";
+	- var date = "July 2014";
+	- var summary = "LifeLine, a Maryland group home for the &quot;medically fragile,&quot; was fraught with problems for years - financial difficulties, reports of neglect, and ultimately deaths, including that of a child - that went largely ignored by Maryland regulators who continued to award it million-dollar contracts. In his legislation-inducing story, Baltimore Sun investigative reporter Doug Donovan revealed this shocking oversight and examined the lives it affected.";
+	- var link = "http://data.baltimoresun.com/lifeline/";
+	
+	- var about = "We gave this powerful investigation a special presentation outside of the CMS. In addition to allowing for a custom design, a large benefit of this was the chance to highlight emotional photographs of a young, disabled man - who suffered irreparable damage while under LifeLine's supervision - and the parents who adopted him. Another unique element is the timeline of LifeLine's troubles and contracts that follows the reader down the rail of the page. ";
+	- var role = "I was the sole developer on this project and co-designer with one other teammate. All the elements - the inline document viewer, timeline, photo gallery lightbox - were custom built.";
+
+	- var accent = "#dbc1e6";
+	- var background = "#26122e";
+	- var backgroundrgba = "rgba(38,18,46,0.6)";
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

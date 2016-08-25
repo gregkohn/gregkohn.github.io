@@ -1,0 +1,165 @@
+/*  PROJECT STYLES
+ *  ----------------- 
+ *  + Project Info
+ *    - Secondary screenshots (no devices, alternate views of project)
+ *    + Info blocks
+ *      - Icon
+ *      - Text
+ */
+
+
+ 
+// Breakpoints for this section //
+
+$info-bp: 1000px //Screenshots drop below info blocks; info blocks in three columns
+$info-mobile-bp: 500px //Info blocks styled for mobile
+
+// --------------------------- //
+
+
+
+
+.project-info
+	padding: 30px 0
+	background-color: white
+	+clearfix
+	@media (max-width: $info-mobile-bp)
+		padding-top: 10px	
+
+
+	/* Secondary screenshots (no devices, alternate views of the project) */
+
+	&__screenshots
+		float: right
+		width: 50%
+		overflow: hidden
+		@media (max-width: $info-bp)
+			float: none
+			width: auto
+
+	&__screenshot
+		margin-bottom: 20px
+		img
+			width: 100%
+
+		&--phone
+			float: left
+			width: (100%/3)
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 100%
+				width: 4px
+				height: 100%
+				background-color: white
+				margin-left: -2px
+
+		&--tablet
+			float: right
+			width: (200%/3)
+			overflow: hidden
+			img
+				position: relative
+				left: 2px
+
+		&__label
+			color: #CCC
+			padding-left: 5px
+			font-family: $league-spartan
+
+
+
+	/* Info blocks, with icons and text */
+
+	&__blocks
+		float: left
+		// border: 1px solid red
+		width: 47%
+		padding-top: 30px
+		a:link, a:visited, a:hover, a:active
+			color: #111
+			text-decoration: none
+			// padding-bottom: 1px
+			border-bottom: 2px solid #111	
+		@media (max-width: $info-bp)
+			float: none
+			width: auto
+			+clearfix
+
+	&__block
+		margin-bottom: 60px
+		+clearfix
+		@media (max-width: $info-bp) and (min-width: 900px)
+			float: left
+			width: 50%
+			padding: 0 10px
+			&:nth-of-type(3)
+				clear: left
+
+		&--awards
+			ul
+				list-style: none
+				padding: 0
+			li
+				margin-bottom: 10px
+
+			&__cat
+				font:
+					size: 14px
+					style: italic				
+
+	&__icon
+		float: left
+		font-size: 24px
+		// +circle-w-centering(100px, 15px)
+		//border: 15px solid #F0F0F0
+		// border: 1px solid red
+		text-align: center
+		position: relative
+		color: #A9A9A9
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			+size(100%)
+			//border: 2px solid #F0F0F0
+			border-radius: 50px
+			+transform(scale(0.85))
+		@media (max-width: $info-bp) and (min-width: 900px)
+			float: none
+			margin: 0 auto 20px auto
+		@media (max-width: $info-mobile-bp)
+			float: none		
+			margin: 0 auto 20px auto
+
+
+	&__block__content
+		float: left
+		width: 75%
+		width: calc(100% - 125px) //100px icon, 25px margin
+		margin-left: 25px
+		font-size: 16px
+		color: #777
+		line-height: 1.6
+		header
+			font-family: $league-spartan
+			color: black
+			margin-bottom: 10px
+		@media (max-width: $info-bp) and (min-width: 900px)
+			float: none
+			width: auto
+			margin: 0
+			header
+				text-align: center
+		@media (max-width: $info-mobile-bp)
+			float: none
+			width: auto
+			margin: 0
+			header
+				text-align: center			
+
+
+

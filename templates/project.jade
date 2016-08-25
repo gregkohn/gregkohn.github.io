@@ -1,0 +1,88 @@
+extends base.jade
+
+block css
+	link(rel="stylesheet", type="text/css", href="/stylesheets/project.css")
+	link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Prata")
+
+block javascript
+	script.
+		$(document).ready(function(){
+			project.init();
+		});
+
+		var config = {
+			move: '50px',
+		 	scale:    { direction: 'up', power: '0' },
+		 	vFactor: 0.5
+		}
+		window.sr = new scrollReveal(config);
+
+
+block pagetitle
+	title #{title} - Greg Kohn - Portfolio	
+
+block content
+	style.
+		.project-intro__screenshot--imac .project-intro__screenshot__img { background-image: url('/images/projects/#{slug}/imac.jpg'); }
+		.project-intro__screenshot--ipad .project-intro__screenshot__img { background-image: url('/images/projects/#{slug}/ipad.jpg'); }
+		.project-intro__screenshot--iphone .project-intro__screenshot__img { background-image: url('/images/projects/#{slug}/iphone.jpg'); }
+		#small-logo, .project-intro__who-when { color: #{accent}; }
+		.line, .project-intro__btn--visit { background-color: #{accent}; }
+		@media (max-width: 1024px){ #hamburger:hover .line { background-color: #{accent}; } }
+		#tophat { background-color: #{backgroundrgba}; }		
+		body, .project-intro, footer { background-color: #{background}; }
+		.project-intro__btn, .project-intro__btn a, .project-intro__btn a:link, .project-intro__btn a:visited, .project-intro__btn a:hover, .project-intro__btn a:active { color: #{background}; }
+
+	section.project-intro
+		.container
+			header.project-intro__title= title
+
+			.project-intro__content
+				.project-intro__details
+					.project-intro__who-when
+						.project-intro__who <span>Company</span> #{company}
+						.project-intro__when <span>Completed</span> #{date}
+					.project-intro__summary !{summary}
+					.project-intro__btns
+						.project-intro__btn.project-intro__btn--details <span class="icon-eye"></span> Read details
+						.project-intro__btn.project-intro__btn--visit
+							a(href="#{link}" target="_blank")
+								<span class="icon-link"></span> Visit project
+					.project-intro__back-to-projects
+						a(href="/index.html#projects") <span class="icon-back"></span> back to projects
+									
+				.project-intro__screenshots
+					.project-intro__screenshot.project-intro__screenshot--imac
+						img(src="/images/devices/imac.png")
+						.project-intro__screenshot__img(data-sr="move 0px, scale up 20%")
+					.project-intro__screenshot.project-intro__screenshot--ipad
+						img(src="/images/devices/ipad-#{devicecolor}.png")
+						.project-intro__screenshot__img(data-sr="move 0px, scale up 20%, wait 200ms")
+					.project-intro__screenshot.project-intro__screenshot--iphone
+						img(src="/images/devices/iphone-#{devicecolor}.png")
+						.project-intro__screenshot__img(data-sr="move 0px, scale up 20%, wait 400ms")
+
+	section.project-info
+
+		.container
+			.project-info__blocks
+				block about
+				block role
+				block numbers
+				block awards
+
+			.project-info__screenshots
+				.project-info__screenshot.project-info__screenshot--desktop(data-sr="enter bottom, wait 100ms")
+					.project-info__screenshot__label desktop
+					img(src="/images/projects/#{slug}/desktop.jpg")
+				.project-info__screenshot.project-info__screenshot--phone(data-sr="enter bottom")
+					.project-info__screenshot__label phone
+					img(src="/images/projects/#{slug}/phone.jpg")
+				.project-info__screenshot.project-info__screenshot--tablet(data-sr="enter right, wait 200ms")
+					.project-info__screenshot__label tablet
+					img(src="/images/projects/#{slug}/tablet.jpg")
+
+
+
+
+

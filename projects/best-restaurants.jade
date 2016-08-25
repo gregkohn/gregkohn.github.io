@@ -1,0 +1,64 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "best-restaurants";
+	
+	- var title = "Best Restaurants 2014";
+	- var company = "The Baltimore Sun";
+	- var date = "March 2014";
+	- var summary = "Baltimore has a striking smorgasbord of cuisine options, dotted with interesting faces like celebrity chef Bryan Voltaggio and Quayum Karzai, the older brother of Afghan President Hamid Karzai. In this sea of choices, where can you go for the best dining experience? Enter Richard Gorelick, The Baltimore Sun's food critic, and his top 50 choices for 2014.";
+	- var link = "http://data.baltimoresun.com/best-restaurants-2014/";
+	
+	- var about = "In years past, the online version of The Sun's Best Restaurants list has been simply that: a list, perhaps organized in a table. To elevate this version, we decided on a 52-page minisite that gave our food critic space to justify each pick in that restaurant's own dedicated page. The list was still there - sporting the ability to sort by ranking or name - but now we could include large photos, contact details and even map thumbnails for each restaurant.";
+	- var role = "I was the sole designer and developer on this project. To handle production, I built the site templates from scratch then ported them into WordPress. I used David DeSandro's elegant <a href='http://isotope.metafizzy.co/' target='_blank'> isotope.js </a> to handle the list sorting. The full map of restaurants, powered by Google Maps, supported address search and made use of info windows customized with graphics.";
+	- var numbers = "We intended this to be a resource with a shelf life, and the numbers indicate that goal was achieved. Picking up more than half a million views in its first year, the project continues to get hits every day, boasting over 670,000 visits in its lifetime.";
+
+	- var accent = "goldenrod";
+	- var background = "#2a507a";
+	- var backgroundrgba = "rgba(42,80,122,0.6)";
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

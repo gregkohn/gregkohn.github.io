@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--if lt IE 7<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+-->
+<!--if IE 7<html class="no-js lt-ie9 lt-ie8">
+-->
+<!--if IE 8
+<html class="no-js lt-ie9">
+
+-->
+<html lang="en" class="no-js">
+  <head>
+    <!--Basic page needs-->
+    <meta charset="utf-8">
+    <title>Baltimore Homicides Map - Greg Kohn - Portfolio	</title>
+    <meta name="description" content="The interactive design and front-end development portfolio for Greg Kohn">
+    <meta name="author" content="Greg Kohn">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/project.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Prata">
+    <!--Twitter Stuff-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@gregkohn">
+    <meta name="twitter:title" content="Greg Kohn's Portfolio">
+    <meta name="twitter:description" content="The interactive design and front-end development portfolio for Greg Kohn">
+    <meta name="twitter:domain" content="gregkohn.com">
+  </head>
+  <body>
+    <div id="tophat"><a href="/index.html">
+        <div id="small-logo"><span>G</span><span><img src="/images/cross--white.png"></span><span>K</span></div></a>
+      <div id="hamburger">
+        <div id="line-top" class="line hide"></div>
+        <div id="line-middle" class="line"></div>
+        <div id="line-middle-2" class="line"></div>
+        <div id="line-bottom" class="line hide"></div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav__content">
+        <div class="nav__logo"><a href="/index.html">
+            <div class="name name--nav"><span class="no-space bright">G</span><span><img src="/images/cross--single-transparency.png"></span><span class="no-space bright">K		</span></div></a></div>
+        <div class="nav__column nav__column--left">
+          <div class="nav__link-btns">
+            <div class="nav__link-btn nav__link-btn--mobile"><a href="/index.html#projects" class="nav__link--hash">PROJECTS</a></div>
+            <div class="nav__link-btn"><a href="/index.html#experience" class="nav__link--hash">EXPERIENCE</a></div>
+            <div class="nav__link-btn"><a href="/index.html#all-skills" class="nav__link--hash">SKILLS</a></div>
+            <div class="nav__link-btn"><a href="/resume/resume.pdf" target="_blank">RESUME</a></div>
+          </div>
+          <div class="nav__social-tools">
+            <div class="nav__social-tool"><a href="http://www.codepen.io/gregkohn" target="_blank" class="nav__social-tool__text"><span class="icon-codepen"></span> gregkohn</a></div>
+            <div class="nav__social-tool"><a href="http://www.twitter.com/gregkohn" target="_blank" class="nav__social-tool__text"><span class="icon-twitter2"></span> @gregkohn</a></div>
+            <div class="nav__social-tool"><a href="mailto:greg7kohn@gmail.com" target="_blank" class="nav__social-tool__text"><span class="icon-mail"></span> greg7kohn@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="nav__column nav__column--right">
+          <div class="nav__projects">
+            <div class="nav__link-btn nav__link-btn--center"><a href="/index.html#projects">FEATURED</a></div>
+            <ul class="nav__project-list">
+              <li><a href="/projects/freddie-45.html" style="color: #eecf00;">The Freddie Gray Mystery</a></li>
+              <li><a href="/projects/tracking-omalley.html" style="color: #4ecbc2;">Tracking Martin O'Malley</a></li>
+              <li><a href="/projects/homicides-map.html" style="color: #ca4a4b;">Homicides Map</a></li>
+              <li><a href="/projects/orioles-roster.html" style="color: #ea5f1d;">Orioles Roster 2015</a></li>
+              <li><a href="/projects/undue-force.html" style="color: #6598c2;">Undue Force</a></li>
+            </ul>
+            <div class="nav__projects__all"><a href="/index.html#projects" class="nav__link--hash">+ all projects</a></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <style>
+      .project-intro__screenshot--imac .project-intro__screenshot__img { background-image: url('/images/projects/homicides-map/imac.jpg'); }
+      .project-intro__screenshot--ipad .project-intro__screenshot__img { background-image: url('/images/projects/homicides-map/ipad.jpg'); }
+      .project-intro__screenshot--iphone .project-intro__screenshot__img { background-image: url('/images/projects/homicides-map/iphone.jpg'); }
+      #small-logo, .project-intro__who-when { color: #ca4a4b; }
+      .line, .project-intro__btn--visit { background-color: #ca4a4b; }
+      @media (max-width: 1024px){ #hamburger:hover .line { background-color: #ca4a4b; } }
+      #tophat { background-color: rgba(21,21,21,0.6); }		
+      body, .project-intro, footer { background-color: #151515; }
+      .project-intro__btn, .project-intro__btn a, .project-intro__btn a:link, .project-intro__btn a:visited, .project-intro__btn a:hover, .project-intro__btn a:active { color: #151515; }
+      
+    </style>
+    <section class="project-intro">
+      <div class="container">
+        <header class="project-intro__title">Baltimore Homicides Map</header>
+        <div class="project-intro__content">
+          <div class="project-intro__details">
+            <div class="project-intro__who-when">
+              <div class="project-intro__who"><span>Company</span> The Baltimore Sun</div>
+              <div class="project-intro__when"><span>Completed</span> July 2015</div>
+            </div>
+            <div class="project-intro__summary">With its size rising at an alarming rate, our database of Baltimore homicides is an important resource for the community. It is a longstanding feature covering homicide data back to 2011, though it recently underwent a dramatic design &quot;facelift.&quot;</div>
+            <div class="project-intro__btns">
+              <div class="project-intro__btn project-intro__btn--details"><span class="icon-eye"></span> Read details</div>
+              <div class="project-intro__btn project-intro__btn--visit"><a href="http://data.baltimoresun.com/bing-maps/homicides/" target="_blank"><span class="icon-link"></span> Visit project</a></div>
+            </div>
+            <div class="project-intro__back-to-projects"><a href="/index.html#projects"><span class="icon-back"></span> back to projects</a></div>
+          </div>
+          <div class="project-intro__screenshots">
+            <div class="project-intro__screenshot project-intro__screenshot--imac"><img src="/images/devices/imac.png">
+              <div data-sr="move 0px, scale up 20%" class="project-intro__screenshot__img"></div>
+            </div>
+            <div class="project-intro__screenshot project-intro__screenshot--ipad"><img src="/images/devices/ipad-light.png">
+              <div data-sr="move 0px, scale up 20%, wait 200ms" class="project-intro__screenshot__img"></div>
+            </div>
+            <div class="project-intro__screenshot project-intro__screenshot--iphone"><img src="/images/devices/iphone-light.png">
+              <div data-sr="move 0px, scale up 20%, wait 400ms" class="project-intro__screenshot__img"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="project-info">
+      <div class="container">
+        <div class="project-info__blocks">
+          <div data-sr class="project-info__block">
+            <div class="project-info__icon"><span class="icon-monitor"></span></div>
+            <div class="project-info__block__content">
+              <header>ABOUT THE PROJECT</header>
+              <div>Our homicides map and database has been around for years, and was consequently sporting an outdated look and lacking any responsiveness. With the backend architecture powering the application in fine working order, the goal was to make minimal changes to the HTML and do the bulk of a design refresh through CSS. Ultimately, a custom CSS-based slider with JavaScript hooks was built as well.</div>
+            </div>
+          </div>
+          <div data-sr class="project-info__block">
+            <div class="project-info__icon"><span class="icon-pencil"></span></div>
+            <div class="project-info__block__content">
+              <header>MY ROLE</header>
+              <div>I was the sole designer and developer of the app's design refresh. I went with a dark, modular design that lent itself to being responsive and built a tab-navigated slider using CSS3 transforms and transitions.</div>
+            </div>
+          </div>
+          <div data-sr class="project-info__block">
+            <div class="project-info__icon"><span class="icon-graph"></span></div>
+            <div class="project-info__block__content">
+              <header>BY THE NUMBERS</header>
+              <div>In the month after the redesign, there were 204,000+ views, compared to 131,000+ the month prior (+56%). In its lifetime the project has more than 2.5 million views.</div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info__screenshots">
+          <div data-sr="enter bottom, wait 100ms" class="project-info__screenshot project-info__screenshot--desktop">
+            <div class="project-info__screenshot__label">desktop</div><img src="/images/projects/homicides-map/desktop.jpg">
+          </div>
+          <div data-sr="enter bottom" class="project-info__screenshot project-info__screenshot--phone">
+            <div class="project-info__screenshot__label">phone</div><img src="/images/projects/homicides-map/phone.jpg">
+          </div>
+          <div data-sr="enter right, wait 200ms" class="project-info__screenshot project-info__screenshot--tablet">
+            <div class="project-info__screenshot__label">tablet</div><img src="/images/projects/homicides-map/tablet.jpg">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div data-sr="scale up 50%, move 0px, reset" class="name"><span class="no-space">G</span><span><img src="/images/cross--single-transparency.png"></span><span class="no-space">K</span></div>
+      <div class="footer__copyright">&copy; 2015 Greg Kohn</div>
+      <div class="footer__credits">Icon credits: Simple Icons, Miroslav Koša, Wilson Joseph, Funtastic for the Noun Project; IcoMoon, Cole Bemis, and Daniel Bruce</div>
+    </footer>
+    <!--Javascript-->
+    <script src="/scripts/min/javascript-min.js"></script>
+    <script>
+      $(document).ready(function(){
+      	project.init();
+      });
+      
+      var config = {
+      	move: '50px',
+       	scale:    { direction: 'up', power: '0' },
+       	vFactor: 0.5
+      }
+      window.sr = new scrollReveal(config);
+      
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/league-spartan/leaguespartan-bold-webfont.eot');
+    src: url('fonts/league-spartan/leaguespartan-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/league-spartan/leaguespartan-bold-webfont.woff2') format('woff2'),
+         url('fonts/league-spartan/leaguespartan-bold-webfont.woff') format('woff'),
+         url('fonts/league-spartan/leaguespartan-bold-webfont.ttf') format('truetype'),
+         url('fonts/league-spartan/leaguespartan-bold-webfont.svg#League Spartan') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'icons';
+	src:url('fonts/icons/icons.eot?8itpft');
+	src:url('fonts/icons/icons.eot?#iefix8itpft') format('embedded-opentype'),
+		url('fonts/icons/icons.woff2?8itpft') format('woff2'),
+		url('fonts/icons/icons.ttf?8itpft') format('truetype'),
+		url('fonts/icons/icons.woff?8itpft') format('woff'),
+		url('fonts/icons/icons.svg?8itpft#icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone-outline:before {
+	content: "\e618";
+}
+.icon-eye:before {
+	content: "\e000";
+}
+.icon-mail:before {
+	content: "\e002";
+}
+.icon-monitor:before {
+	content: "\e021";
+}
+.icon-back:before {
+	content: "\e039";
+}
+.icon-minus:before {
+	content: "\e115";
+}
+.icon-check:before {
+	content: "\e116";
+}
+.icon-close:before {
+	content: "\e117";
+}
+.icon-menu:before {
+	content: "\e120";
+}
+.icon-link:before {
+	content: "\e128";
+}
+.icon-trophy:before {
+	content: "\e99e";
+}
+.icon-codepen:before {
+	content: "\eae4";
+}
+.icon-pencil:before {
+	content: "\e602";
+}
+.icon-graph:before {
+	content: "\e603";
+}
+.icon-arrow-left:before {
+	content: "\e60a";
+}
+.icon-arrow-down:before {
+	content: "\e60b";
+}
+.icon-arrow-up:before {
+	content: "\e60c";
+}
+.icon-arrow-right:before {
+	content: "\e60d";
+}
+.icon-arrow-left2:before {
+	content: "\e60e";
+}
+.icon-arrow-down2:before {
+	content: "\e60f";
+}
+.icon-arrow-up2:before {
+	content: "\e610";
+}
+.icon-arrow-right2:before {
+	content: "\e600";
+}
+.icon-arrow-left3:before {
+	content: "\e611";
+}
+.icon-arrow-down3:before {
+	content: "\e612";
+}
+.icon-arrow-up3:before {
+	content: "\e613";
+}
+.icon-arrow-right3:before {
+	content: "\e601";
+}
+.icon-twitter2:before {
+	content: "\e607";
+}
+.icon-twitter:before {
+	content: "\e614";
+}
+.icon-facebook2:before {
+	content: "\e616";
+}
+.icon-facebook:before {
+	content: "\e615";
+}
+.icon-linkedin2:before {
+	content: "\e605";
+}
+.icon-linkedin:before {
+	content: "\e604";
+}

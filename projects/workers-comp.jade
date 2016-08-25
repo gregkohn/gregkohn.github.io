@@ -1,0 +1,65 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "workers-comp";
+	
+	- var title = "Painful Lessons";
+	- var company = "The Baltimore Sun";
+	- var date = "February 2014";
+	- var summary = "A Baltimore Sun investigation into worker compensation claims paid out by the city in 2013 resulted in a startling discovery: After the police department, the most claims of any city agency stemmed from school employees. In this dramatic, award-winning exposé, Sun investigative reporters brought some of the more shocking claims - students punching, scratching, kicking, even robbing teachers - to light and examined the fallout for the victims.";
+	- var link = "http://data.baltimoresun.com/workers-comp/";
+	
+	- var about = "There are two large components - the custom story presentation, and an interactive database of the 200 most expensive workers' compensation claims paid out by the city in 2013. In the presentation, the most unique elements implemented are periodic vignettes which highlight claims and awards for victims interviewed in the story. The database, on its separate page, lets readers filter claims by department, sort by payout amount, and read exactly what the victim alleged.";
+	- var role = "I was the sole developer and designer on both components of this project, with the exception of the &quot;Pricing by Body Part&quot; interactive graphic. I populated the database using JSON, then filtered and sorted the records using David DeSandro's elegant <a href='http://isotope.metafizzy.co/' target='_blank'> isotope.js.</a>";
+	- var numbers = "The collective project pages have 33,000+ views.";
+	- var awards = "<div class='project-info__awards__award'><strong> Award of Excellence, </strong> 2014 Society of News Design's The Best of Digital Design</div>"
+
+	- var accent = "goldenrod";
+	- var background = "#151515";
+	- var backgroundrgba = "rgba(21,21,21,0.6)";	
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "dark";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+block awards
+	.project-info__block.project-info__block--awards(data-sr)
+		.project-info__icon
+			span.icon-trophy
+		.project-info__block__content
+			header AWARDS
+			div !{awards}
+
+
+
+
+
+
+

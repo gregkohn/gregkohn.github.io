@@ -1,0 +1,160 @@
+extends templates/base.jade
+
+block css
+	link(rel="stylesheet", type="text/css", href="/stylesheets/home.css")
+	link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,400italic,700")
+
+block javascript
+	script.
+		$(document).ready(function(){
+			home.init();
+		});
+
+		var config = {
+			move: '50px',
+		 	scale: { direction: 'up', power: '0' },
+		 	vFactor: 0.5,
+		 	mobile: false
+		}
+		window.sr = new scrollReveal(config);		
+
+block tophat
+	#tophat.is-hidden
+		#hamburger
+			#line-top.line.hide
+			#line-middle.line
+			#line-middle-2.line
+			#line-bottom.line.hide
+
+block content
+	section.home-section.home-section--intro
+		.name.name--intro.is-larger
+			span(data-sr="move 8px, over 500ms, wait 2300ms") G
+			span(data-sr="move 8px, over 500ms, wait 1700ms") R
+			span(data-sr="move 8px, over 500ms, wait 2000ms") E
+			span(data-sr="move 0px, over 500ms, wait 0ms, opacity 1").bright.no-space G
+			span(data-sr="move 0px, over 500ms, wait 0ms, opacity 1").bright
+				img(src="/images/cross--single-transparency.png")
+			span(data-sr="move 0px, over 500ms, wait 0ms, opacity 1").bright K
+			span(data-sr="move 8px, over 500ms, wait 2200ms") O
+			span(data-sr="move 8px, over 500ms, wait 1900ms") H
+			span(data-sr="move 8px, over 500ms, wait 2500ms").no-space N
+		.intro__arrow.is-hidden
+			span.icon-arrow-down3
+
+	section.home-section.home-section--skills
+		.container
+			.skills
+				.skills__skill(data-sr="")
+					.skills__icon
+						.skills__icon__ring(data-sr="scale down 60%, move 0px, wait 200mh:s")
+						.skills__icon__image
+							img(src="/images/icons/design--inverse.png")
+					.skills__title DESIGN
+					.skills__desc Whether I mock them up in Photoshop or on paper, my designs are typically minimalistic and &quot;flat.&quot; I dedicate a lot of attention to the small details - alignment, colors, fonts, subtle animations, etc. - and believe that simple is simply better.
+
+				.skills__skill(data-sr="wait 200ms")
+					.skills__icon
+						.skills__icon__ring(data-sr="scale down 60%, move 0px, wait 400ms")
+						.skills__icon__image
+							img(src="/images/icons/coding--inverse.png")
+					.skills__title CODE
+					.skills__desc I specialize in front-end development and think code should be just as beautiful as the design it brings to life. I utilize modern tools, like Jade and Sass, to speed development and keep it organized, DRY and ultimately more powerful.
+
+				.skills__skill(data-sr="wait 400ms")
+					.skills__icon
+						.skills__icon__ring(data-sr="scale down 60%, move 0px, wait 600ms")
+						.skills__icon__image
+							img(src="/images/icons/responsive--inverse.png")
+					.skills__title RESPONSIVE
+					.skills__desc Okay, this isn't truly its own category: I <strong>design</strong> with a fluid screen size in mind and strive to <strong>code</strong> my media queries as efficient as possible. I make use of modular designs and Sass to streamline this process, but I'm just as likely to take on an ambitious large-screen design and manually optimize for smaller screens.
+					//- Together we can eliminate horizontal scrollbars!
+
+
+
+	- var projects = [{"slug":"license-plates","name":"Banned License Plates","date":"08/2015"},{"slug":"fitness-heroes","name":"Fitness Heroes","date":"07/2015"},{"slug":"homicides-map","name":"Homicides Map","date":"07/2015"},{"slug":"tracking-omalley","name":"Tracking Martin O'Malley","date":"05/2015"},{"slug":"craft-distilling","name":"Craft Distilling","date":"05/2015"},{"slug":"freddie-45","name":"Freddie Gray 45 Mintues","date":"04/2015"},{"slug":"orioles-roster","name":"Orioles Roster","date":"04/2015"},{"slug":"terps-season","name":"Terps Season","date":"01/2015"},{"slug":"ravens-review","name":"Ravens' Season Review","date":"12/2014"},{"slug":"gift-guide","name":"Gift Guide","date":"11/2014"},{"slug":"undue-force","name":"Undue Force","date":"09/2014"},{"slug":"lifeline","name":"Lifeline","date":"07/2014"},{"slug":"best-restaurants","name":"Best Restaurants","date":"03/2014"},{"slug":"workers-comp","name":"Workers' Compensation","date":"02/2014"},{"slug":"military-sexual-assaults","name":"Military Sexual Assaults","date":"12/2013"}];
+
+	section#projects.home-section.home-section--projects
+		.container
+			header(data-sr)
+				span featured projects
+		.project-tns
+
+			- each project, index in projects
+				.project-tn(data-sr="wait #{(((index % 3) + 1) * 100)}ms")
+					a.project-tn__link(href="/projects/#{project.slug}.html")
+						.project-tn__desc
+							.project-tn__title
+								span !{project.name}
+							.project-tn__date #{project.date}
+						img(src="/images/projects/#{project.slug}/thumbnail.jpg")
+
+	section#experience.home-section.home-section--experience
+		.container
+			header(data-sr)
+				span experience
+		//- This section uses .ex- for 'experience'
+		.ex
+
+			.ex__column.ex__column--left
+				.ex__job.ex__job--right-justified(data-sr)
+					.ex__job__title Front-End Developer
+					.ex__job__company Viget Labs
+					.ex__job__date November 2015 - Present
+				.ex__job.ex__job--left-justified(data-sr)
+					.ex__job__title Interactive Graphics Developer
+					.ex__job__company The Baltimore Sun
+					.ex__job__date October 2013 - October 2015
+				.ex__job.ex__job--right-justified(data-sr)
+					.ex__job__title Fellow/Web Designer
+					.ex__job__company News21
+					.ex__job__date January - August 2013
+				.ex__job.ex__job--left-justified(data-sr)
+					.ex__job__title Interactive Graphics Intern
+					.ex__job__company The Baltimore Sun
+					.ex__job__date January - May 2013
+				.ex__job.ex__job--right-justified(data-sr)
+					.ex__job__title Interactive Graphics Producer
+					.ex__job__company Capital News Service
+					.ex__job__date September - December 2012
+
+			.ex__column.ex__column--center
+				img(src="/images/timeline.png")
+
+			.ex__column.ex__column--right
+
+		#resume.resume
+			.resume__link-btn
+				a(href="/resume/resume.pdf" target="_blank") FULL RESUME
+
+
+	section#all-skills.home-section.home-section--all-skills
+		.container
+			//- This section uses .as- for 'all skills'
+			.as
+
+				.as__column.as__column-left
+					header(data-sr)
+						span skills
+					ul.as__list(data-sr)
+						li HTML5 &amp; Jade
+						li CSS3, Sass
+						li Responsive design &amp; development
+						li JavaScript &amp; jQuery
+						li PhotoShop &amp; Illustrator
+						li Writing
+
+				.as__column.as__column-right
+					header(data-sr)
+						span things i love
+					ul.as__list(data-sr)
+						li Sublime Text
+						li Gulp
+						li BEM
+						li macOS, iOS
+						li Photoshop
+						li Spotify
+
+
+
+

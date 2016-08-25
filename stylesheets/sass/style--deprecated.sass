@@ -1,0 +1,358 @@
+@import "mixins"
+@import "variables"
+@import "bourbon"
+@import "neat"
+
+/* Site styles */
+
+html
+	box-sizing: border-box
+	&.freeze
+		height: 100%
+		body
+			height: 100%
+			overflow: hidden
+
+*, *:before, *:after
+	box-sizing: inherit
+
+body
+	font-family: "Montserrat", sans-serif
+
+
+/* Breakpoints */
+
+$tablet: 768px
+$mobile: 500px
+
+$default-container: 1200px
+
+/* Colors */
+
+$steel: #717c80
+$steel-dark: #383f42
+
+
+$lightblue: #d6d7d9
+$medblue: #999aa0
+$blue: #343642
+$darkblue: #24262e
+
+//Another color palette
+$gray: #333
+$darkgray: #222
+$darkestgray: #111
+
+$red: #F2473F
+// $red: #FDD023
+$red: goldenrod
+$teal: #19B5FE
+
+/* Tophat */
+
+$tophat-height: 50px
+$hamline-width: 25px
+$hamline-height: 3px
+$hamline-margin: 5px
+
+#tophat
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	+size(100% $tophat-height)
+	//background-color: white
+	// background-color: rgba(255,255,255,0.05)
+	+transition(all 0.7s ease)
+	&.hidden
+		+transform(translateY(-100%))
+
+
+#hamburger
+	position: absolute
+	top: (($tophat-height - ($hamline-height*3 + $hamline-margin*2))/2)
+	right: 10px
+	// left: 100%
+	width: $hamline-width
+	height: ($hamline-height*3 + $hamline-margin*2)
+	cursor: pointer
+	&:hover	
+		.line
+			background-color: $red
+	&.active
+		#line-middle
+			+transform(rotate(45deg))
+		#line-middle-2
+			+transform(rotate(-45deg))
+		#line-top
+			+transform(translateY(-5px))
+		#line-bottom
+			+transform(translateY(5px))
+		.hide
+			opacity: 0
+			visibility: hidden
+		
+.line
+	+size($hamline-width $hamline-height)
+	background-color: white
+	position: absolute
+	right: 0
+	opacity: 1
+	visibility: visible
+	+transition(all 0.4s)
+
+#line-top
+	top: 0
+
+#line-middle
+	top: ($hamline-height + $hamline-margin)
+	
+#line-middle-2
+	top: ($hamline-height + $hamline-margin)
+
+#line-bottom
+	top: 2*($hamline-height + $hamline-margin)
+
+
+#small-logo
+	font:
+		weight: 700
+		size: 16px
+	letter-spacing: 1em
+	color: white
+	line-height: $tophat-height
+	margin-left: 20px
+	// height: 100%
+	// position: absolute
+	// right: 100%
+	span:nth-child(1)
+		+animation(accent-glow 10s 0s infinite)
+	span:nth-child(2)
+		+animation(accent-glow 10s 0.2s infinite)
+	span:nth-child(3)
+		+animation(accent-glow 10s 0.4s infinite)
+
+/* Nav */
+
+nav
+	position: fixed
+	z-index: 9
+	+size(100%)
+	background-color: $darkestgray
+	opacity: 0
+	visibility: hidden
+	+transition(all 0.4s)
+	&.visible
+		opacity: 1
+		visibility: visible
+
+
+
+/* General sections */
+
+.container
+	width: $default-container
+	margin: 0 auto
+	position: relative
+
+.home-section
+	padding: 40px 20px
+	header
+		font:
+			family: "League Spartan", sans-serif
+			size: 14px
+			weight: 700
+			// style: italic
+		text-transform: uppercase
+		letter-spacing: 3px
+		color: $red
+		text-align: center
+		margin-bottom: 50px
+		// span
+		// 	padding-bottom: 5px
+		// 	border-bottom: 2px solid rgba(255,255,255,0.2)
+
+
+
+$arrow-height: 15px
+$arrow-width: 15px
+$section-color: $gray
+      
+.section-arrow
+	position: absolute
+	bottom: 0
+	+size(100% $arrow-height)
+	+size(100% auto)
+	//margin-top: 100px
+	+transition(all 0.7s ease)
+	> div
+		float: left
+		height: 100%
+	//Below are styles used for arrow icon instead of the triangle arrow		
+	color: white
+	font-size: 40px
+	text-align: center
+	line-height: 1
+	span
+		display: block
+	&.hidden
+		+transform(translateY(100%))	
+
+.block
+	width: 40%
+	width: calc(50% - #{$arrow-width})
+	background-color: $section-color
+
+.triangle
+	width: 10%
+	width: calc(#{$arrow-width})
+	position: relative
+	&:after
+		content: ''
+		width: 0
+		height: 0
+		border-style: solid
+		position: absolute
+		bottom: 0
+	&.left:after
+		border-width: $arrow-height 0 0 $arrow-width
+		border-color: transparent transparent transparent $section-color
+	&.right:after
+		border-width: 0 0 $arrow-height $arrow-width
+		border-color: transparent transparent $section-color transparent
+
+
+
+/* Intro */
+
+
+.intro
+	position: relative
+	z-index: 1
+	height: 500px
+	height: 100vh
+	background-color: $darkgray
+	padding: 10px 0
+	background-size: cover
+	line-height: 500px
+	line-height: 100vh
+
+.name
+	display: inline-block
+	width: 100%
+	text-align: center
+	color: #444
+	color: rgba(255,255,255,0.2)
+	letter-spacing: 1em
+	line-height: 1
+	+transition(all 1000ms)
+	+transition-delay(300ms)
+	+transform(scale(1))
+	@media (max-width: 420px)
+		+transform(scale(0.8))
+	&.larger
+		+transform(scale(1.3))
+	font:
+		weight: 700
+		size: 24px
+	@media (max-width: 420px)
+		font-size: 20px
+	span
+		opacity: 0
+		+transition(all 500ms)
+		&.visible
+			opacity: 1
+		&.darker
+			color: white
+		&:last-child
+			letter-spacing: normal
+
+
+
+/* Projects */
+
+.projects
+	background-color: $section-color
+	position: relative
+	z-index: 2
+
+
+.project-grid
+	+outer-container($default-container)
+	@media (max-width: 1240px)
+		+outer-container(auto)
+
+
+.project-grid-tn
+	img
+		display: block
+		width: 100%
+	margin-bottom: flex-gutter()
+	+span-columns(4)
+	+omega(3n)
+	@media (max-width: $tablet)
+		+span-columns(6)
+		+omega-reset(3n)
+		+omega(2n)
+	@media (max-width: $mobile)
+		+span-columns(12)
+		+omega-reset(2n)
+
+.project-grid-header
+	background-color: $darkestgray
+	color: #CCC
+	padding: 10px
+	font-size: 12px
+	font-weight: 700
+	text-transform: uppercase
+
+.project-grid-header-date
+	float: right
+	color: #555
+
+
+
+
+/* Animations classes and keyframes */
+
+.fade-in-up
+	opacity: 0
+	visibility: hidden
+	+transform(translateY(50px))
+	+transition(all 0.6s ease)
+	.activated &
+		opacity: 1
+		visibility: visible
+		+transform(translateY(0))	
+
+.fade-in-down
+	opacity: 0
+	visibility: hidden
+	+transform(translateY(-50px))
+	+transition(all 0.6s ease)
+	.activated &
+		opacity: 1
+		visibility: visible
+		+transform(translateY(0))	
+
+.fade-out-up
+	opacity: 1
+	visibility: visible
+	+transform(translateY(0))
+	+transition(all 0.6s ease)
+	.activated &
+		opacity: 0
+		visibility: hidden
+		+transform(translateY(-50px))	
+
++keyframes(accent-glow)
+	0%
+		color: white
+	10%
+		color: $red
+	20%
+		color: white
+	100%
+		color: white
+
+

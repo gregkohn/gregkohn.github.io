@@ -1,0 +1,422 @@
+@import "general"
+
+
+/*  HOME STYLES
+ *  ----------------- 
+ *
+ *  + Intro section
+ *    - Animated name
+ *
+ *  
+ *  + Skills
+ *    - Icon, description  
+ *
+ *
+ *  + Grid of featured projects
+ *    - Project thumbnail, title, date
+ *
+ *
+ *  + Experience timeline
+ *    - Three columns
+ *	  - Resume link
+ *
+ *
+ *  + All skills
+ *    - Two columns
+ *    - List of skills, things I love
+ *
+ */
+
+
+.home-section
+	padding: 40px 20px
+	header
+		font:
+			family: $league-spartan
+			size: 14px
+			weight: 700
+			// style: italic
+		text-transform: uppercase
+		letter-spacing: 5px
+		color: white
+		text-align: center
+		margin-bottom: 50px
+		@media (max-width: $mobile)
+			margin-bottom: 25px
+
+
+/* Intro */
+
+
+.home-section--intro
+	position: relative
+	z-index: 1
+	height: 500px
+	height: 100vh
+	background-color: $darkgray
+	padding: 10px 0
+	background-size: cover
+	line-height: 500px
+	line-height: 100vh
+	overflow: hidden
+	@media (max-width: $mobile)
+		height: auto
+		line-height: 1
+		padding: 200px 0
+
+
+.intro__arrow
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	line-height: 1
+	text-align: center
+	color: white
+	font-size: 40px
+	cursor: pointer
+	transition: all 0.7s ease
+	&.is-hidden
+		transform: translateY(100%)
+	span
+		transition: opacity 0.4s
+		&:hover
+			opacity: 0.2
+	@media (max-width: $mobile)
+		display: none		
+
+
+/* Skills */
+
+$skills-mobile-bp: 500px
+
+.home-section--skills
+	padding: 140px 0
+	background-color: black
+	@media (max-width: 767px)
+		padding: 40px 0
+
+
+.skills
+	text-align: center
+
+
+	&__skill
+		display: inline-block
+		vertical-align: top
+		width: 300px
+		margin: 30px
+		@media (min-width: 1000px) and (max-width: 1200px)
+			width: 270px
+			margin: 25px
+		@media (max-width: 767px)
+			display: block
+			width: auto
+			+clearfix
+			margin: 30px 10px 70px 10px
+		@media (max-width: 400px)
+			margin: 30px 0 70px 0
+
+
+
+	&__icon
+		+size(170px)
+		border-radius: 85px
+		border: 20px solid #ededed
+		border: 20px solid rgba(255,255,255,0)
+		padding: 20px
+		margin: 0 auto 20px auto
+		position: relative
+		line-height: 80px
+		@media (min-width: $skills-mobile-bp) and (max-width: 767px)
+			float: left
+			margin-right: 20px
+		@media (max-width: $skills-mobile-bp)
+			+size(150px)
+			line-height: 70px
+
+
+
+
+	&__icon__ring
+		position: absolute
+		top: 0
+		left: 0
+		+size(100%)
+		border-radius: 85px
+		// border: 2px solid red
+		// transform: scale(0.93)
+		box-shadow: 0 0 0 20px rgba(255,255,255,0.15)
+
+
+	&__icon__image
+		display: inline-block
+		vertical-align: middle
+		// border: 1px solid red
+		img
+			display: block
+			margin: 0 auto
+			width: 90%
+
+	&__title
+		font:
+			family: $league-spartan
+			size: 14px
+		color: white
+		letter-spacing: 5px
+		@media (min-width: $skills-mobile-bp) and (max-width: 767px)
+			margin-top: 10px
+			text-align: left	
+
+
+	&__desc
+		margin-top: 15px
+		line-height: 1.5
+		color: #999
+		font-size: 14px
+		text-align: left
+
+
+
+
+
+/* Projects */
+
+.home-section--projects
+	background-color: darken($gray, 2%)
+	position: relative
+	z-index: 2
+
+
+.project-tns
+	+outer-container($default-container)
+	@media (max-width: 1240px)
+		+outer-container(auto)
+
+
+.project-tn
+	// border: 1px solid red
+	margin-bottom: flex-gutter()
+	position: relative
+	img
+		display: block
+		width: 100%
+	&:hover
+		.project-tn__desc
+			opacity: 1
+		.project-tn__title
+			span
+				transform: translateY(0)
+			&:after
+				width: 100%
+		.project-tn__date
+			transform: translateY(0)
+		.project-tn__link:before
+			opacity: 1
+	@media (min-width: ($tablet+1))
+		+span-columns(4)
+		+omega(3n)
+	@media (min-width: ($mobile+1)) and (max-width: $tablet)
+		+span-columns(6)
+		+omega(2n)
+	@media (max-width: $mobile)
+		+span-columns(12)
+		margin-bottom: 20px
+	+links(white, none)
+
+	&__link
+		display: block
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			+size(100%)
+			background-color: rgba(0,0,0,0.8)
+			opacity: 0
+			transition: opacity 0.5s
+			@media (max-width: $tablet-landscape)
+				display: none
+
+	&__desc
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		// background-color: $darkestgray
+		// border: 1px solid red
+		color: white
+		padding: 10px
+		font-size: 16px
+		font-weight: 700
+		// display: none
+		opacity: 0
+		transition: opacity 0.4s
+		line-height: 1
+		@media (max-width: $tablet-landscape)
+			position: static
+			background-color: $darkestgray
+			opacity: 1
+			+clearfix
+
+	&__title
+		// text-transform: uppercase
+		font-family: $league-spartan
+		span
+			transform: translateY(-10px)
+			transition: transform 0.4s ease
+			font-size: 16px
+			@media (max-width: $tablet-landscape)
+				transform: none
+				font-size: 12px
+		&:after
+			content: ''
+			display: block
+			+size(0 3px)
+			background-color: #A9A9A9
+			margin: 10px 0
+			transition: width 0.4s ease
+			transition-delay: 0.1s
+			@media (max-width: $tablet-landscape)
+				display: none
+		@media (max-width: $tablet-landscape)
+			float: left
+			line-height: 8px
+
+	&__date
+		font-size: 12px
+		transform: translateY(10px)
+		transition: transform 0.4s ease
+		color: #999
+		@media (max-width: $tablet-landscape)
+			color: #666
+			transform: none
+			float: right
+
+
+/* Experiences */
+
+$ex-bp-1: 830px
+$ex-bp-2: 767px
+
+.home-section--experience
+	background-color: black
+
+/* This section is prefixed with .ex- */
+
+.ex
+	text-align: center
+
+	&__column
+		display: inline-block
+		vertical-align: top
+		// border: 1px solid red
+
+		&--center
+			padding-top: 33px
+			margin: 0 10px
+			@media (max-width: $ex-bp-2)
+				display: none
+
+		&--left, &--right
+			width: 270px
+			@media (max-width: $ex-bp-1)
+				width: 240px
+			@media (max-width: $ex-bp-2)
+				width: auto	
+
+	&__job
+		color: white
+		margin-bottom: 49px
+		@media (max-width: $ex-bp-1)
+			font-size: 14px
+			margin-bottom: 60px
+		@media (max-width: $ex-bp-2)
+			margin-bottom: 30px	
+
+		&:last-child
+			margin-bottom: 0
+
+		&--left-justified
+			text-align: left
+			position: relative
+			left: (270px + 10px + 200px + 10px + 10px)
+			@media (max-width: $ex-bp-1)
+				left: (240px + 10px + 200px + 10px + 10px)
+			@media (max-width: $ex-bp-2)
+				position: static
+				left: auto	
+
+		&--right-justified
+			text-align: right
+			@media (max-width: $ex-bp-2)
+				text-align: left
+
+		&__title
+			font-weight: 700
+
+		&__company
+			color: #999
+
+		&__date
+			font-style: italic
+			color: #555
+
+
+.resume
+	margin-top: 50px
+	&__link-btn
+		text-align: center
+		@extend .nav__link-btn
+
+
+
+/* All Skills */
+
+.home-section--all-skills
+	background-color: darken($gray, 2%)
+	position: relative
+	z-index: 2
+
+/* This section is prefixed with .as- */
+
+.as
+	+clearfix
+	
+	&__column
+		width: 50%
+		float: left
+		@media (max-width: 600px)
+			width: auto
+			float: none
+			margin-bottom: 80px
+			&:last-child
+				margin-bottom: 0
+
+	&__list
+		color: #999
+		list-style: none
+		margin: 0
+		padding: 0
+		text-align: center
+
+		li
+			margin: 0 0 10px 0
+			padding: 0
+			&:before
+				content: '+'
+				font-size: 10px
+				position: relative
+				bottom: 2px
+				margin-right: 5px
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,263 @@
+/*  PROJECT STYLES
+ *  ----------------- 
+ *  + Project Intro
+ *    - Project title
+ *    - Completed when and for whom
+ *    - Description
+ *    - Link
+ *    - Screenshots on iMac, iPad and iPhone
+ */
+
+
+// About the color variables
+//
+// In reality, color variables are overidden in project.jade
+// (for individual customization purposes) but using them
+// illustrates which properties are changed.
+
+
+ 
+// Breakpoints for this section //
+
+$intro-bp: 980px //Elements moved from side-by-side to column
+$intro-mobile-bp: 510px //Sizing adjustments for mobile
+
+
+$screenshots-bp: 1150px //First drop in size for devices
+$screenshots-bp2: 600px //Second drop in size for devices
+
+// --------------------------- //
+
+
+
+.project-intro
+	background-color: $background
+	padding: 50px 0
+
+
+	&__title
+		margin: 30px 0 40px 0
+		font:
+			family: $prata
+			size: 74px
+		color: white
+		line-height: 1
+		@media (max-width: $intro-mobile-bp)
+			font-size: 50px
+			margin: 20px 0
+
+
+
+	/* The project's who, when, summary and links */
+
+	&__content
+		+clearfix
+
+	&__details
+		float: left
+		width: 43%
+		padding: 20px 40px 0 0
+		@media (max-width: $intro-bp)
+			float: none
+			width: auto
+			padding: 20px 0
+
+	&__who-when
+		font:
+			family: $league-spartan
+			size: 18px
+		color: $accent
+		line-height: 1.5
+		span
+			margin-right: 8px
+			color: white
+			color: rgba(255,255,255,0.4)
+		@media (max-width: $intro-mobile-bp)
+			font-size: 16px
+		
+
+	&__summary
+		margin-top: 40px
+		font:
+			family: $open-sans
+			size: 16px
+		line-height: 1.6
+		color: white
+		max-width: 500px
+		@media (max-width: $intro-mobile-bp)
+			margin-top: 20px	
+
+	&__btns
+		margin-top: 40px
+		max-width: 360px
+		+clearfix
+		@media (max-width: $intro-mobile-bp)
+			margin: 40px auto 0 auto	
+
+	&__btn
+		width: 50%
+		padding: 12px 0 15px 0
+		float: left
+		font:
+			family: $league-spartan
+			size: 16px
+		color: $background
+		text-align: center
+		background-color: white
+		span
+			opacity: 0.8
+			font-size: 24px
+			margin-right: 8px
+			position: relative
+			top: 3px
+		a, a:link, a:visited, a:hover, a:active
+			display: block
+			padding: 12px 0 15px 0
+			text-decoration: none
+			color: $background
+		@media (max-width: $intro-mobile-bp)
+			font-size: 14px		
+		&--details
+			cursor: pointer
+		&--visit
+			background-color: $accent
+			padding: 0
+
+	&__back-to-projects
+		+links(white, none)
+		margin-top: 40px
+		font:
+			family: $league-spartan
+			size: 14px
+			weight: 700
+		letter-spacing: 3px
+		a:hover
+			opacity: 0.7
+
+
+
+
+/* Screenshots on all three devices. */
+
+/* Note on format:
+ * I opted to use plain device .pngs overlaid by screenshot .jpgs
+ * displayed using background-image. This separation allows the device images
+ * to be cached and lets me save the screenshots in the much smaller .jpg format */
+
+.project-intro
+
+	&__screenshots
+		float: left
+		width: 57%
+		// border: 1px solid red
+		position: relative
+		@media (max-width: $intro-bp)
+			float: none
+			margin: 20px auto 0 auto
+			width: auto
+		@media (max-width: $intro-bp) and (min-width: 910px)
+			text-align: center
+		@media (max-width: 910px)
+			width: (450px + 96px)
+		@media (max-width: $screenshots-bp2)
+			width: (278px + 59px)
+		@media (max-width: 370px)
+			width: 300px
+
+	&__screenshot
+		//+transform(translateX(50px))
+		//+animation(slide-in-left 1s ease forwards)
+		@media (max-width: $intro-bp) and (min-width: 910px)
+			display: inline-block
+			position: relative
+			top: 0
+			left: 0
+			margin: 0 10px
+
+		&--imac
+			position: relative
+			.project-intro__screenshot__img
+				+size(520px 295px)
+				top: 27px
+				left: 29px
+			@media (max-width: $screenshots-bp)
+				img
+					+size(490px 411px)
+				.project-intro__screenshot__img
+					+size(441px 250px)
+					top: 23px
+					left: 25px
+			@media (max-width: $screenshots-bp2)
+				margin: 30px auto 0 auto
+				// width: 300px
+				img
+					+size(300px 252px)
+				.project-intro__screenshot__img
+					+size(271px 154px)
+					top: 14px
+					left: 15px
+
+		&--ipad
+			left: 360px
+			.project-intro__screenshot__img
+				+size(208px 280px)
+				top: 28px
+				left: 24px	
+			@media (max-width: $screenshots-bp)
+				left: 305px
+				img
+					+size(219px 287px)
+				.project-intro__screenshot__img
+					+size(176px 238px)
+					top: 25px
+					left: 21px
+			@media (max-width: $intro-bp) and (min-width: 910px)
+				left: auto
+			@media (max-width: $screenshots-bp2)
+				left: 187px
+				img
+					+size(133px 177px)
+				.project-intro__screenshot__img
+					+size(108px 146px)
+					top: 15px
+					left: 13px
+
+		&--iphone
+			left: 530px
+			.project-intro__screenshot__img
+				+size(99px 172px)
+				top: 34px
+				left: 8px	
+			@media (max-width: $screenshots-bp)
+				left: 450px
+				img
+					+size(96px 204px)
+				.project-intro__screenshot__img
+					+size(84px 146px)
+					top: 29px
+					left: 6px
+			@media (max-width: $intro-bp) and (min-width: 910px)					
+				left: auto
+			@media (max-width: $screenshots-bp2)
+				left: 278px
+				img
+					+size(59px 125px)
+				.project-intro__screenshot__img
+					+size(51px 90px)
+					top: 18px
+					left: 4px			
+
+		&--ipad, &--iphone
+			position: absolute
+			bottom: 0
+			@media (max-width: $intro-bp) and (min-width: 910px)
+				position: relative
+			@media (max-width: 370px)
+				left: auto
+				right: 0
+
+
+		&__img
+			position: absolute
+			background-size: cover
+

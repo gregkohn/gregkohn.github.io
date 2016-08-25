@@ -1,0 +1,64 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "freddie-45";
+	
+	- var title = "The Freddie Gray Mystery";
+	- var company = "The Baltimore Sun";
+	- var date = "April 2015";
+	- var summary = "In the wake of Freddie Gray's tragic death, there was an urgent need to piece together the narrative of his arrest. We released this timeline - driven by visceral images of Baltimore - of Gray's known experiences that fateful April day, less than one week after he died and before the violent riots that invoked a citywide curfew.";
+	- var link = "http://data.baltimoresun.com/freddie-gray/";
+	
+	- var about = "Compared to many projects, this required truly rapid development. Driven by its breaking-news nature, the project was taken from conception to completion in two days. It was a thrilling challenge to work on such a high profile story and to help keep Baltimore - and the rest of the world - informed on what we know happened to Freddie Gray.";
+	- var role = "I was the sole developer on this project and co-designer with one other teammate. I wanted to create a unique timeline experience, so <a href='http://codepen.io/gregkohn/pen/LVYjLE' target='_blank'>I tested</a> and implemented a fullscreen CSS3 transform-powered vertical slider for larger screen sizes. I built this project rapidly using my usual arsenal: Jade &amp; Sass. ";
+	- var numbers = "The project has 33,000+ views (1 per visit, not per slide).";
+	- var awards = "<div class='project-info__block--awards__award'><strong> Winner, </strong> 2015 Online Journalism Awards (ONA)</div><div class='project-info__block--awards__cat'>Explanatory Reporting: Medium</div>";
+
+	- var accent = "#eecf00";
+	- var background = "#111";
+	- var backgroundrgba = "rgba(17,17,17,0.6)";	
+
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+block numbers
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-graph
+		.project-info__block__content
+			header BY THE NUMBERS
+			div !{numbers}
+
+block awards
+	.project-info__block.project-info__block--awards(data-sr)
+		.project-info__icon
+			span.icon-trophy
+		.project-info__block__content
+			header AWARDS
+			div !{awards}
+
+
+
+
+
+
+

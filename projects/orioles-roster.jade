@@ -1,0 +1,63 @@
+extends ../templates/project.jade
+
+block variables
+	- var slug = "orioles-roster";
+	
+	- var title = "Orioles Roster 2015";
+	- var company = "The Baltimore Sun";
+	- var date = "April 2015";
+	- var summary = "Hot off an appearance in the American League Championship Series, the Orioles were riding the momentum of two postseason appearances in three years - enough to make many fans momentarily forget the previous 14-year drought. To introduce fans to new acquisitions, re-introduce players off the disabled list, and showcase the rest of the beloved Birds, we built this visually intensive, interactive roster.";
+	- var link = "http://data.baltimoresun.com/orioles/roster/";
+	
+	- var about = "My goal was to take the focus away from the monotonous list of names - a mandatory but banal element of a roster - without using repetitve headshots. The solution was large, candid photos of each player, that were then overlaid with a semi-transparent screen and player details.";
+	- var role = "I was the sole designer and developer on this project. I opted for a one-page design, with the individual player &quot;pages&quot; loading dynamically via JSON. In order to help highlight the large imagery, the project features a dark theme and minimal text.";
+
+	- var accent = "#ea5f1d";
+	- var background = "#151515";
+	- var backgroundrgba = "rgba(21,21,21,0.6)";
+	
+	//- Light or Dark iPad and iPhone?
+	- var devicecolor = "light";
+
+
+
+//Comment out any unused section
+
+block about			
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-monitor
+		.project-info__block__content
+			header ABOUT THE PROJECT
+			div !{about}
+
+block role							
+	.project-info__block(data-sr)
+		.project-info__icon
+			span.icon-pencil
+		.project-info__block__content
+			header MY ROLE
+			div !{role}
+
+// block numbers
+// 	.project-info__block(data-sr)
+// 		.project-info__icon
+// 			span.icon-graph
+// 		.project-info__block__content
+// 			header BY THE NUMBERS
+// 			div !{numbers}
+
+// block awards
+// 	.project-info__block.project-info__block--awards(data-sr)
+// 		.project-info__icon
+// 			span.icon-trophy
+// 		.project-info__block__content
+// 			header AWARDS
+// 			div !{awards}
+
+
+
+
+
+
+

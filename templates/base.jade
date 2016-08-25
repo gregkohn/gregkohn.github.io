@@ -1,0 +1,77 @@
+block variables
+
+doctype html
+//if lt IE 7
+	<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+	<html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+	<html class="no-js lt-ie9">
+
+html(class="no-js", lang="en")
+
+	head
+
+		//Basic page needs
+		meta(charset="utf-8")
+		block pagetitle
+			title Greg Kohn - Portfolio
+		meta(name="description", content="The interactive design and front-end development portfolio for Greg Kohn")
+		meta(name="author", content="Greg Kohn")
+		link(rel="shortcut icon" href="/images/favicon.ico")
+
+
+
+		//Mobile Specific Metas
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+
+		//CSS
+		block css
+
+		//- Facebook Stuff
+		//- meta(property="og:title", content="")
+		//- meta(property="og:url", content="")
+		//- meta(property="og:image", content="")
+		//- meta(property="og:site_name", content="")
+		//- meta(property="og:description", content="")
+		//- meta(property="fb:app_id", content="310302989040998")
+
+		//Twitter Stuff
+		meta(name="twitter:card", content="summary")
+		meta(name="twitter:creator", content="@gregkohn")
+		meta(name="twitter:title", content="Greg Kohn's Portfolio")
+		meta(name="twitter:description", content="The interactive design and front-end development portfolio for Greg Kohn")
+		meta(name="twitter:domain", content="gregkohn.com")
+
+	body
+		block tophat
+			#tophat
+				a(href="/index.html")
+					#small-logo
+						span G
+						span
+							img(src="/images/cross--white.png")
+						span K
+				#hamburger
+					#line-top.line.hide
+					#line-middle.line
+					#line-middle-2.line
+					#line-bottom.line.hide
+
+		include nav.jade
+		
+		block content
+
+		footer
+			.name(data-sr="scale up 50%, move 0px, reset")
+				span.no-space G
+				span
+					img(src="/images/cross--single-transparency.png")
+				span.no-space K
+			.footer__copyright &copy; 2015 Greg Kohn
+			.footer__credits Icon credits: Simple Icons, Miroslav Koša, Wilson Joseph, Funtastic for the Noun Project; IcoMoon, Cole Bemis, and Daniel Bruce
+
+		//Javascript
+		script(src="/scripts/min/javascript-min.js")
+		block javascript
+

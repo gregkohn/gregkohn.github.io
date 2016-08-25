@@ -1,0 +1,53 @@
+/*  GENERAL STYLES
+ *  ----------------- 
+ *  + Base styles
+ *    - default font
+ *
+ *
+ *  - General classes
+ *
+ */
+
+
+
+/* Base styles */
+
+body
+	font-family: $open-sans
+	background-color: $darkgray
+
+
+
+
+/* General-use classes */
+
+html
+	&.is-frozen
+		height: 100%
+		body
+			height: 100%
+			overflow: hidden
+
+.container
+	max-width: $default-container
+	margin: 0 auto
+	position: relative
+	@media (max-width: ($default-container + 30px))
+		padding: 0 15px
+	@media (max-width: 600px)
+		padding: 0 10px
+	
+	&--half
+		width: 50%
+		float: left
+
+
+
+.code
+	font-family: 'Courier New', Courier, serif
+	font-weight: bold
+	background-color: #F0F0F0
+	padding: 3px
+
+
+

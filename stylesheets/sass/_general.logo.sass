@@ -1,0 +1,47 @@
+.name
+	display: inline-block
+	width: 100%
+	text-align: center
+	color: #333
+	color: rgba(255,255,255,0.2)
+	letter-spacing: 1em
+	line-height: 1
+	font:
+		family: $montserrat
+		weight: 700
+		size: 24px
+	@media (max-width: 420px)
+		font-size: 16px
+	span
+		display: inline-block
+		vertical-align: middle
+		&.bright
+			color: white
+		&.no-space
+			letter-spacing: normal
+		img
+			width: 80px
+			@media (max-width: 420px)
+				width: 60px
+
+	&--intro
+		transition: all 1000ms
+		transition-delay: 300ms
+		transform: scale(1)
+		&.is-larger
+			transform: scale(1.3)
+			@media (max-width: $mobile)
+				transform: none	
+		span
+			opacity: 0
+			&.bright
+				opacity: 1
+		@media (max-width: $tablet-landscape)
+			span
+				opacity: 1
+
+	&--nav
+		transition: transform 0.4s ease
+		transform: scale(1)
+		&:hover
+			transform: scale(0.95)
